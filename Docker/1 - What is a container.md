@@ -43,3 +43,15 @@ Dev team will give those artifacts over to the Operations team, and them will ha
 ### How the App deployment work after containers
 
 Now the Dev and the Ops team work together to package the application in a container. We don't need an environment configuration needed on the server - except the Docker Runtime.
+
+## What is technically a container
+
+Is made of images, layers of stacked images on each other. They're usually based in linux (Alpine - because of it's small size), that will make sure that the container stay small in size.
+
+### Image x Container
+
+Image is the application package, together with the configuration and the dependencies. The image is the artifact that can be moved around.
+
+The Container is when I pull the image on my local machine and starts it. So, the application inside the image actually starts the container environment.
+
+Summarizing it, if it's not running it's an image. If you started it, and it's running in you machine is a container.
