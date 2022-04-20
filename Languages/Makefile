@@ -1,5 +1,6 @@
 DIR_NAME := $(shell date +'%Y-%m')
-FILE_NAME := $(shell date +'%Y-%m-%d').md
+YMD_DATE_FORMAT := $(shell date +'%Y-%m-%d')
+FILE_NAME := $(YMD_DATE_FORMAT).md
 FRENCH_DIR_PATH:=French/$(DIR_NAME)
 FRENCH_FILE_PATH:=$(FRENCH_DIR_PATH)/$(FILE_NAME)
 # TODO: Automate this template do get its content from a french_template.md file
@@ -10,3 +11,7 @@ french-note:
 	@echo $(FRENCH_TEMPLATE) >> $(FRENCH_FILE_PATH) 
 	@echo 'French note $(FILE_NAME) created'
 	@code ./$(FRENCH_FILE_PATH)
+
+commit-french-note:
+	@git add ./French/$(DIR_NAME)
+	@git commit -m "$(YMD_DATE_FORMAT) - add french lesson notes"
