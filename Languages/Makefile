@@ -15,3 +15,4 @@ french-note:
 commit-french-note:
 	@git add ./French/$(DIR_NAME)
 	@git commit -m "$(YMD_DATE_FORMAT) - add french lesson notes"
+	
