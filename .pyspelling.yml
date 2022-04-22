@@ -1,0 +1,14 @@
+# TODO: How to skip french, chinese, portuguese and url spelling check
+
+matrix:
+  - name: markdown_files
+    sources:
+      - "**/*.md"
+    default_encoding: utf-8
+    pipeline:
+      - pyspelling.filters.context:
+          context_visible_first: true
+          #escapes: '\\[\\`~]'
+          delimiters:
+            - open: "(?s)^(?P<open> *`{3,})$"
+              close: "^(?P=open)$"
