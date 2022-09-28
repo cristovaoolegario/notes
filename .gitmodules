@@ -1,0 +1,3 @@
+[submodule "Docker/ROTC/metadata-service"]
+	path = Docker/ROTC/metadata-service
+	url = https://github.com/boot-services/metadata-service
